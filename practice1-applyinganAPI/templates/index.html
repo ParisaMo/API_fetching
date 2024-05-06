@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Food Gallery</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+  <body>
+    <h1>Delicious Food Gallery</h1>
+    <div class="food-container">
+      {% for item in food_items %}
+      <div class="food-item">
+        <h2>
+          <a href="{{ url_for('food_detail', fdcId=item['fdcId']) }}"
+            >{{ item['description'] }}</a
+          >
+        </h2>
+        <a href="{{ url_for('food_detail', fdcId=item['fdcId']) }}">
+          <img
+            src="{{ url_for('static', filename='images/' + item['fdcId']|string + '.jpg') }}"
+            alt="Picture of {{ item['description'] }}"
+          />
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
