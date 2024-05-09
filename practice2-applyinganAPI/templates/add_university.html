@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add University</title>
+</head>
+<body>
+    <h1>Add Details for {{ university_name }}</h1>
+    <form action="/api/create" method="post">
+        <input type="hidden" name="name" value="{{ university_name }}">
+        <label>Description:</label>
+        <input type="text" name="description" required>
+        <label>Country:</label>
+        <input type="text" name="country" required>
+        <label>City:</label>
+        <input type="text" name="city" required>
+        <label>Alternate City:</label>
+        <input type="text" name="altcity">
+        <label>Established:</label>
+        <input type="text" name="established" required>
+        <button type="submit">Add University</button>
+    </form>
+    <a href="/">Cancel</a>
+</body>
+</html>

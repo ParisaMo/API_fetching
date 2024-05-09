@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University CRUD Operations</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Ensure the body is at least as tall as the viewport */
+        margin: 0; /* Reset default margin */
+        padding: 0; /* Reset default padding */
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 360px; /* Control the maximum width of the container */
+      }
+      h1 {
+        color: #0056b3;
+        text-align: center;
+      }
+      h2 {
+        font-size: 1.5em;
+        color: #333;
+        margin-top: 30px; /* Space before each heading */
+      }
+      form {
+        margin-top: 10px; /* Space between each form */
+      }
+      label {
+        margin-bottom: 5px;
+        display: block;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Manage Universities in the UK</h1>
+
+      <!-- Form to Search for a University -->
+      <h2>Search for a University</h2>
+      <form action="/api/search" method="get">
+        <label for="searchUniversityName">University Name:</label>
+        <input
+          type="text"
+          id="searchUniversityName"
+          name="searchUniversityName"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <!-- Form to Add a New University -->
+      <h2>Add New University</h2>
+      <form action="/api/create" method="post">
+        <label for="universityName">University Name:</label>
+        <input type="text" id="universityName" name="universityName" required />
+        <button type="submit">Add University</button>
+      </form>
+
+      <!-- Form to Update an Existing University -->
+      <h2>Update University</h2>
+      <form action="/api/update" method="post">
+        <label for="universityId">University ID:</label>
+        <input type="text" id="universityId" name="universityId" required />
+        <label for="newUniversityName">New University Name:</label>
+        <input
+          type="text"
+          id="newUniversityName"
+          name="newUniversityName"
+          required
+        />
+        <button type="submit">Update University</button>
+      </form>
+
+      <!-- Form to Delete a University -->
+      <h2>Delete University</h2>
+      <form action="/api/delete" method="post">
+        <label for="deleteUniversityId">University ID:</label>
+        <input
+          type="text"
+          id="deleteUniversityId"
+          name="deleteUniversityId"
+          required
+        />
+        <button type="submit">Delete University</button>
+      </form>
+    </div>
+  </body>
+</html>

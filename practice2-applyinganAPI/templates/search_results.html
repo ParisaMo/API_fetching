@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% for uni in universities %}
+        <div>
+            <h2>{{ uni.name }}</h2>
+            <p>{{ uni.description }}</p>
+            <img src="{{ uni.logo }}" alt="Logo">
+        </div>
+    {% else %}
+        <p>No results found.</p>
+    {% endfor %}
+    <a href="/">Go Back</a>
+</body>
+</html>
+
