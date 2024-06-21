@@ -4,19 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ food['description'] }}</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
   </head>
   <body>
     <div class="detail-container">
       <h1>{{ food['description'] }}</h1>
-      <img
-        src="{{ url_for('static', filename='images/' + food['fdcId']|string + '.jpg') }}"
-        alt="Picture of {{ food['description'] }}"
-      />
+      <img src="{{ url_for('static', filename='images/' + food['fdcId']|string + '.jpg') }}" alt="Picture of {{ food['description'] }}" />
       <h3>Food Code: {{ food['fdcId'] }}</h3>
+
       <table class="detail-table">
         <tr>
           <th>Nutrient</th>
@@ -24,8 +19,8 @@
         </tr>
         {% for nutrient in food['foodNutrients'] %}
         <tr>
-          <td>{{ nutrient['name'] }}</td>
-          <td>{{ nutrient['amount'] }} {{ nutrient['unitName'] }}</td>
+          <td>{{ nutrient['nutrient']['name'] }}</td>
+          <td>{{ nutrient['amount'] }} {{ nutrient['nutrient']['unitName'] }}</td>
         </tr>
         {% endfor %}
       </table>
