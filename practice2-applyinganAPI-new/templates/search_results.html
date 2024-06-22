@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        <div class="gallery">
+            {% for image in images %}
+                <div class="image-container">
+                    <img src="{{ image.url }}" alt="Cat Image">
+                    <p>{{ image.breed_name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

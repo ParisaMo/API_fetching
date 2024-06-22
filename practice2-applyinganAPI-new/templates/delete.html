@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Cat Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Cat Image</h1>
+        <form action="/delete" method="post">
+            <label for="image_id">Image ID:</label>
+            <input type="text" id="image_id" name="image_id" required>
+            <button type="submit">Delete</button>
+        </form>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
