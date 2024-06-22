@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Cat Pictures by Origin</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Cat Pictures by Origin</h1>
+        <form action="/search" method="get">
+            <label for="origin">Select Origin:</label>
+            <select id="origin" name="origin" required>
+                {% for breed in breeds %}
+                    <option value="{{ breed.id }}">{{ breed.origin }} - {{ breed.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Search</button>
+        </form>
+        <a href="/upload">Upload a Cat Image</a>
+        <a href="/update">Update a Cat Image</a>
+        <a href="/delete">Delete a Cat Image</a>  <!-- Add this line -->
+    </div>
+</body>
+</html>
