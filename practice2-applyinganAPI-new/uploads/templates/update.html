@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Cat Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Cat Image</h1>
+        <form action="/update" method="post" enctype="multipart/form-data">
+            <label for="image_id">Image ID:</label>
+            <input type="text" id="image_id" name="image_id" required>
+            <label for="file">Select New Image:</label>
+            <input type="file" id="file" name="file" accept="image/*" required>
+            <button type="submit">Update</button>
+        </form>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
